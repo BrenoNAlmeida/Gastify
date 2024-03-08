@@ -33,6 +33,7 @@ class usuario(AbstractUser):
 class forma_pagamento(models.Model):
     nome = models.CharField(max_length=50)
     tipo = models.CharField(max_length=50)  # credito, debito, dinheiro, pix, boleto
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
@@ -46,4 +47,3 @@ class despesa(models.Model):
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nome
