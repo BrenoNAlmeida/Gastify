@@ -47,3 +47,4 @@ class despesa(models.Model):
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
 
     def __str__(self):
+        return self.nome
