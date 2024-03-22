@@ -7,7 +7,7 @@ updates:
     # Check for updates every weekday
     schedule:
       interval: "daily"
-      time: "09:00"  # Define o horário para verificar as atualizações
+      time: "07:00"  # Define o horário para verificar as atualizações
 
   # Enable version updates for Docker
   - package-ecosystem: "docker"
