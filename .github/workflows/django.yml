@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "dev" ]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.10]
+        python-version: ["3.10"]
 
     steps:
     - uses: actions/checkout@v3
@@ -32,4 +32,4 @@ jobs:
     - name: Run Dependency Check
       run: |
         SITE_PACKAGES=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
-        python -m dependency_check --project "Gastify" --scan $SITE_PACKAGES 
+        python -m dependency_check --project "Gastify" --scan $SITE_PACKAGES --disableAssembly 
