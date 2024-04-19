@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from .models import usuario, forma_pagamento, despesa
-from .serializers import usuarioSerializer, FormaPagamentoSerializer, DespesaSerializer 
+from .serializers import UsuarioSerializer, FormaPagamentoSerializer, DespesaSerializer 
 from django.http import HttpResponse
 from rest_framework import status, viewsets
 
@@ -15,7 +15,7 @@ from rest_framework import status, viewsets
 
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = usuario.objects.all()
-    serializer_class = usuarioSerializer
+    serializer_class = UsuarioSerializer
 
 
 class FormaPagamentoViewSet(viewsets.ModelViewSet):

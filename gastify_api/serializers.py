@@ -5,7 +5,7 @@ from .models import usuario, forma_pagamento, despesa
 from rest_framework import serializers
 
 
-class usuarioSerializer(serializers.ModelSerializer):
+class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = usuario
         fields = ["id", "username", "email"]
