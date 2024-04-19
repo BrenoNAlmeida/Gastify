@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from .models import *
-from .serializers import *
+from .serializers import usuarioSerializer, FormaPagamentoSerializer, DespesaSerializer 
 from django.http import HttpResponse
 from rest_framework import status, viewsets
 
