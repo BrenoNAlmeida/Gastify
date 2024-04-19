@@ -1,7 +1,7 @@
 # define os serializer da aplicação
 # """
 # from rest_framework import serializers
-from .models import *
+from .models import usuario, forma_pagamento, despesa
 from rest_framework import serializers
 
 
