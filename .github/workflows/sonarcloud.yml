@@ -1,28 +1,20 @@
-name: Análise no SonarCloud
-
+name: Build
 on:
   push:
-    branches: [ "dev" ]
+    branches:
+      - dev  
   pull_request:
-    branches: [ "dev" ]
-  workflow_dispatch:
-
-permissions:
-  pull-requests: read # permite ao SonarCloud decorar PRs com os resultados da análise
-
+    types: [opened, synchronize, reopened]
 jobs:
-  Analysis:
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
-
     steps:
-      - name: Analisar com o SonarCloud
-        uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Necessário para obter informações do PR
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Gere um token no Sonarcloud.io e adicione-o aos segredos deste repositório com o nome SONAR_TOKEN (Configurações > Segredos > Actions > adicionar novo segredo do repositório)
+      - uses: actions/checkout@v3
         with:
-          args:
-            # Chaves únicas do seu projeto e organização. Você pode encontrá-las no SonarCloud > Informações (menu inferior esquerdo)
-            # obrigatório
-            -Dsonar.projectKey=BrenoNAlmeida_Gastify
-            -Dsonar.organization=brenonalmeida
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
