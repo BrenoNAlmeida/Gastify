@@ -1,0 +1,8 @@
+[tool.black]
+line-lenght = 90
+exclude = '''
+/venv/
+/testes/
+/.github/
+/docs/
+'''
