@@ -10,3 +10,4 @@ PyYAML==6.0.1
 sqlparse==0.4.4
 typing_extensions==4.10.0
 uritemplate==4.1.1
+bandit==1.7.8
