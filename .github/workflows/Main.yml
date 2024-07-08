@@ -32,7 +32,9 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
-
+    - name: Lint with pylint
+      run: |
+        pylint gastify_api
     - name: Run Dependency Check
       run: |
         SITE_PACKAGES=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
