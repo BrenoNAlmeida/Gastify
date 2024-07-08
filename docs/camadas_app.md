@@ -107,4 +107,4 @@ Esta camada inclui a configuração do ambiente, dependências externas e outras
         -   `requirements.txt`
         -   Configurações em `conf/settings.py`
     
-`![Camadas de Aplicação do Projeto Gastify](sandbox:applications_layers.png)`
+`![Camadas de Aplicação do Projeto Gastify](/docs/applications_layers.png)`
