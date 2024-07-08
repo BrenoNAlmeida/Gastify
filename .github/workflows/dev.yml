@@ -31,3 +31,6 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+    - name: Lint with pylint
+      run: |
+        pylint gastify_api

@@ -1,0 +1,7 @@
+[MASTER]
+# Adiciona plugins de dependência circular
+load-plugins=pylint.extensions.import_graph
+
+[IMPORTS]
+# Ativa a verificação de importação circular
+import-graph=circular
