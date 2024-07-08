@@ -1,7 +1,7 @@
 asgiref==3.8.1
 dependency-check==0.6.0
 Django==5.0.6
-djangorestframework==3.15.0
+djangorestframework==3.15.2
 drf-yasg==1.21.7
 inflection==0.5.1
 packaging==24.0
